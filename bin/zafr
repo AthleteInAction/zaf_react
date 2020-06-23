@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'zaf_react'
+
+
+# CLI
+require "zaf_react/cli"
+
+
+# Start CLI
+ZAFReact::CLI.start(ARGV)

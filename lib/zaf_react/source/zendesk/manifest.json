@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "top_bar": "assets/index.html"
+    }
+  },
+  "parameters": [
+    {
+      "name": "item_list",
+      "type": "text",
+      "required": false,
+      "secure": false,
+      "default": "[\"A\", \"B\", \"C\"]"
+    }
+  ],
+  "version": "0.1",
+  "frameworkVersion": "2.0"
+}
