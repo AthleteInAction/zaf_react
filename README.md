@@ -1,8 +1,12 @@
 # ZAFReact
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zaf_react`. To experiment with that code, run `bin/console` for an interactive prompt.
+React for Zendesk App Framework V2.0
 
-TODO: Delete this and the text above, and describe your gem
+## Requirements
+
+NPM: Direct from [NPM](https://www.npmjs.com/get-npm) or install with [Homebrew](https://brew.sh)
+
+    $ brew install node
 
 ## Installation
 
@@ -22,13 +26,61 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+###### Initialize a new ZAF React App
 
-## Development
+    $ zafr init
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This will generate a very basic React app with an example component "src/components/item-list/item-list.js".
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+---
+
+###### Start the React server for local testing
+
+    $ zafr start
+
+This will run the React server on [localhost:3000](http://localhost:3000).
+
+---
+
+###### Compile a production build for React
+
+    $ zafr build
+
+This will compile the React app into a production ready build. This will not run if uploaded to Zendesk. See below.
+
+---
+
+###### Start the ZAT Server
+
+    $ zafr server
+
+This will run the previous ```zafr build``` command, then start the ZAT Server for local testing in Zendesk. See Zendesk's docs here for using the ZAT server [here](https://developer.zendesk.com/apps/docs/developer-guide/zat#server).
+
+---
+
+###### Validation
+
+    $ zafr validate
+
+This will run the ```zat validate``` command in the ```/build``` directory to validate the ZAF V2.0 App.
+
+---
+
+###### Package the full app for uploading to Zendesk
+
+    $ zafr package
+
+This will run the above ```zafr build``` command, then flatten the React assets directory structure, and finally compile the entire app into a ZAF V2.0 app ready for upload to Zendesk. The uploadable .zip file can be found at ```/build/tmp/app-{timstamp}.zip```.
+
+---
+
+## ZAFClient
+
+Zendesk's ZAFClient is not available outside of Zendesk. In order to allow local testing, without any need for Zendesk, use the file ```/source/src/zendesk/helpers/zaf_test_client.js```. There you can build methods to simulate the ZAFClient functionality away from the Zendesk environment. The ZAF Test Client will not be used when uploaded to Zendesk or when using the ZAT Server.
+
+## Notes
+
+During the ```zafr package``` command, all React style and js assets will be flattened and moved from ```/build/assets/static/*``` to ```/build/assets/*``` as ZAF V2.0 does not allow a nested file structure.
 
 ## Contributing
 
