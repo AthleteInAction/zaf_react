@@ -84,4 +84,4 @@ During the ```zafr package``` command, all React style and js assets will be fla
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/zaf_react.
+Bug reports and pull requests are welcome on GitHub at https://github.com/onlyexcellence/zaf_react.
