@@ -15,8 +15,14 @@ module ZAFReact
 
      remove_dir "build/assets/static"
 
-     Dir.glob(["build/assets/*.js", "build/assets/*.json", "build/assets/*.map", "build/assets/*.html"]) do |filename|
-       gsub_file filename, /(\"\/static\/js\/)|(\"static\/js\/)/i, '"'
+     Dir.glob([
+       "build/assets/*.js",
+       "build/assets/*.css",
+       "build/assets/*.json",
+       "build/assets/*.map",
+       "build/assets/*.html"
+    ]) do |filename|
+       gsub_file filename, /(\"\/static\/(js|css)\/)|(\"static\/(js|css)\/)/i, '"'
      end
 
      system "zat package --path=build"
