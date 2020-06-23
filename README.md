@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-###### Initialize a new ZAF React App
+#### Initialize a new ZAF React App
 
     $ zafr init
 
@@ -34,7 +34,7 @@ This will generate a very basic React app with an example component "src/compone
 
 ---
 
-###### Start the React server for local testing
+#### Start the React server for local testing
 
     $ zafr start
 
@@ -42,7 +42,7 @@ This will run the React server on [localhost:3000](http://localhost:3000).
 
 ---
 
-###### Compile a production build for React
+#### Compile a production build for React
 
     $ zafr build
 
@@ -50,7 +50,7 @@ This will compile the React app into a production ready build. This will not run
 
 ---
 
-###### Start the ZAT Server
+#### Start the ZAT Server
 
     $ zafr server
 
@@ -58,7 +58,7 @@ This will run the previous ```zafr build``` command, then start the ZAT Server f
 
 ---
 
-###### Validation
+#### Validation
 
     $ zafr validate
 
@@ -66,7 +66,7 @@ This will run the ```zat validate``` command in the ```/build``` directory to va
 
 ---
 
-###### Package the full app for uploading to Zendesk
+#### Package the full app for uploading to Zendesk
 
     $ zafr package
 
